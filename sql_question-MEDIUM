@@ -1,0 +1,19 @@
+1. Show patient_id, diagnosis from admissions.
+Find patients admitted multiple times for the same diagnosis.
+
+query:
+select
+patient_id,
+diagnosis
+from admissions
+group by patient_id,
+diagnosis
+having count(*)>1
+
+2. Show the city and the total number of patients in the city.
+Order from most to least patients and then by city name ascending.
+
+SELECT city, COUNT(*) AS total_patients
+FROM patients
+GROUP BY city
+ORDER BY total_patients DESC, city ASC;
