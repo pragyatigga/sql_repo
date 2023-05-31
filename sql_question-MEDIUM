@@ -60,4 +60,13 @@ weight for patients with the last name 'Maroni'
 
 select max(weight)-min(weight) as wd from patients where last_name='Maroni'
 
-9.
+9.Show all columns for patient_id 542's most recent admission_date.
+select * from admissions where patient_id=542
+order by admission_date desc limit 1;
+(OR)
+SELECT *
+FROM admissions
+GROUP BY patient_id
+HAVING
+  patient_id = 542
+  AND max(admission_date)

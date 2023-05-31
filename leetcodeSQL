@@ -1,0 +1,21 @@
+1757. Recyclable and Low Fat Products
+Write an SQL query to find the ids of products that are both low fat and recyclable.
+select product_id from Products where low_fats='Y' and recyclable='Y';
+
+584. Find Customer Referee
+Write an SQL query to report the names of the
+customer that are not referred by the customer with id = 2.
+
+select name
+from Customer
+where referee_id != 2 or referee_id is null
+
+595. Big Countries
+select  name,population,area from World where area>= '3000000'
+or population >= 25000000;
+
+1148. Article Views I
+Write an SQL query to find all the authors that viewed at least one of their own articles.
+Return the result table sorted by id in ascending order.
+
+select  distinct(author_id) as id from Views where author_id = viewer_id order by author_id asc ;
